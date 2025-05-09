@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: janustest1
   annotations:
-    github.com/project-slug: ${{ parameters.repoURL }}
+    github.com/project-slug: ysoni-redhat/ActualSoftwareTest
 spec:
   type: demonstration
   lifecycle: demoonly
