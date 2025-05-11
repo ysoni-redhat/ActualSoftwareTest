@@ -1,11 +1,13 @@
 ---
 apiVersion: image.openshift.io/v1
 kind: ImageStream
+namespace: demo-project
 metadata:
   name: springboot-demo
 ---
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
+namespace: demo-project
 metadata:
   name: springboot-demo
 spec:
