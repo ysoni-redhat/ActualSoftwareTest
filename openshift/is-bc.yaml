@@ -1,0 +1,22 @@
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: springboot-demo
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: springboot-demo
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/ysoni-redhat/ActualSoftwareTest.git
+    contextDir: .
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: springboot-demo:latest
