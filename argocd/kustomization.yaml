@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - app/1-is-bc.yaml
+  - app/2-deploy-service.yaml
