@@ -4,6 +4,8 @@ kind: Deployment
 namespace: demo-project
 metadata:
   name: springboot-demo
+  labels:
+    app: springboot-demo
 spec:
   replicas: 1
   selector:
@@ -25,6 +27,8 @@ kind: Service
 namespace: demo-project
 metadata:
   name: springboot-service
+  labels:
+    app: springboot-demo
 spec:
   selector:
     app: springboot-demo
@@ -38,6 +42,8 @@ kind: Route
 namespace: demo-project
 metadata:
   name: springboot-route
+  labels:
+    app: springboot-demo
 spec:
   to:
     kind: Service
