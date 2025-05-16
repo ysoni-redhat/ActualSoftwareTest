@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp
+  namespace: demo-project
+  labels:
+    app: springboot-demo
+spec:
+  destination:
+    namespace: demo-project
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/${{ values.repoOwner }}/${{ values.repoName }}.git
+    path: app
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  project: default
+  syncPolicy:
+    automated: {}
