@@ -11,7 +11,7 @@ spec:
     namespace: demo-project
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/ysoni-redhat/ActualSoftwareTest.git
+    repoURL: https://github.com/${{ values.repoOwner }}/${{ values.repoName }}.git
     path: app
     targetRevision: HEAD
     directory:
@@ -19,4 +19,3 @@ spec:
   project: default
   syncPolicy:
     automated: {}
-
